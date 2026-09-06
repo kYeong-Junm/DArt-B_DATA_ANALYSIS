@@ -52,8 +52,12 @@ https://www.youtube.com/watch?v=D46j-e_IHlI&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 
 # 2️⃣ 수행 인증
+<img width="692" height="347" alt="image" src="https://github.com/user-attachments/assets/e280dbc3-08e6-49f1-afdd-ebcc559bd6af" />
+<img width="422" height="115" alt="image" src="https://github.com/user-attachments/assets/16406e35-eaaa-4aad-a76c-2e39304c3725" />
+<img width="357" height="110" alt="image" src="https://github.com/user-attachments/assets/d92f7fc6-8b1c-4958-8961-b133df65469e" />
+<img width="472" height="277" alt="image" src="https://github.com/user-attachments/assets/f36fff90-3887-4ac4-9186-7db0dad2d5c6" />
 
-<!-- 교재에서 안내된 과정을 직접 실행해본 뒤, 진행 결과가 보이도록 4~6장의 스크린샷을 캡처하여 이 글을 지우고 첨부해주세요.-->
+
 
 
 
