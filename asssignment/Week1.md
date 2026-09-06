@@ -63,6 +63,7 @@ https://www.youtube.com/watch?v=D46j-e_IHlI&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 <img width="357" height="110" alt="image" src="https://github.com/user-attachments/assets/d92f7fc6-8b1c-4958-8961-b133df65469e" />
 <img width="472" height="277" alt="image" src="https://github.com/user-attachments/assets/f36fff90-3887-4ac4-9186-7db0dad2d5c6" />
 <img width="832" height="216" alt="image" src="https://github.com/user-attachments/assets/3f33d9bb-e5d9-4c89-81d1-478decadbfb4" />
+<img width="786" height="171" alt="image" src="https://github.com/user-attachments/assets/cce0b6fd-8dad-489d-a545-c00bc63886e2" />
 
 
 
@@ -82,7 +83,7 @@ https://www.youtube.com/watch?v=D46j-e_IHlI&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 좁은 의미: 기술통계, 탐색적 데이터 분석, 가설검정 등
 넓은 의미: 데이터 수집부터 모델링까지
 
-차이점: 
+차이점: 이미 있는 데이터를 요약·검정하는 것 vs. 데이터 수집부터 전처리·모델링·활용까지 전체 과정을 포함하는 것
 ```
 
 
