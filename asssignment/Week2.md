@@ -332,7 +332,9 @@ pd.merge(df1, df2, on='공통열이름')                        # 특정 열 기
 ```
 여기에 선택한 답과 그 이유를 간단히 서술해주세요!
 ```
-
+2️⃣ Scrapy  
+이유: Scrapy는 requests(HTML 가져오기) + BeautifulSoup(데이터 추출하기)의 역할을 하나로 합친 웹 스크래핑 패키지이다.
+나머지는 웹 스크래핑과 관련 없는 분야의 패키지이다. (NumPy=수치 연산, Matplotlib=시각화, Scikit-learn=머신러닝)
 
 
 ### 🎉 수고하셨습니다.
