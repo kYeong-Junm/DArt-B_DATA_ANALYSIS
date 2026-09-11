@@ -62,16 +62,7 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 **웹 기반 API**는 같은 HTTP 프로토콜을 쓰되, HTML 대신 **CSV / JSON / XML**로 데이터를 주고받음:
 
-```
-
-| 방식 | 특징 |
-|---|---|
-| GET | 파라미터를 URL 뒤에 `?key=value&key=value` 형태로 붙여 전달. 쿼리 스트링(query string)이라 부름. URL 길이 제한(보통 2,000자 이내 안전) |
-| POST | URL에 데이터를 붙이지 않고 HTTP 내부 별도 공간에 전송. 길이 제약 없음, URL만 봐서는 어떤 데이터인지 알 수 없음 |
-
 ---
-
-## JSON
 
 **JSON**(JavaScript Object Notation): 파이썬 딕셔너리·리스트와 구조가 거의 동일한 텍스트 포맷.
 
@@ -84,7 +75,6 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 ### 변환 함수
 
-| 함수 | 방향 |
 |---|---|
 | `json.dumps(obj, ensure_ascii=False)` | 파이썬 객체 → JSON 문자열. *한글 보존: `ensure_ascii=False` |
 | `json.loads(str)` | JSON 문자열 → 파이썬 객체 |
@@ -93,14 +83,10 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 ### JSON ↔ 데이터프레임
 
-| 함수 | 설명 |
-|---|---|
 | `pandas.read_json(json_str)` | JSON 문자열 → 데이터프레임 |
 | `pandas.DataFrame(list_of_dict)` | 이미 변환된 파이썬 객체(리스트) → 데이터프레임 |
 
 ---
-
-## XML
 
 **XML**(eXtensible Markup Language): 시작 태그·종료 태그로 계층 구조를 표현. JSON보다 장황하지만 구조적.
 
