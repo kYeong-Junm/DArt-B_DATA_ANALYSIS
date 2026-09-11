@@ -183,7 +183,18 @@ API 응답은 보통 여러 겹으로 중첩된 딕셔너리 구조이므로, �
 
 # 2️⃣ 수행 인증
 
-<!-- 교재에서 안내된 과정을 직접 실행해본 뒤, 진행 결과가 보이도록 4~6장의 스크린샷을 캡처하여 아래에 첨부해주세요.-->
+<img width="1117" height="906" alt="image" src="https://github.com/user-attachments/assets/ccb79595-09d4-47f4-9334-763531ba5488" />
+<img width="832" height="492" alt="image" src="https://github.com/user-attachments/assets/07c80476-c5a1-4551-82e9-975eea2e73df" />
+<img width="977" height="907" alt="image" src="https://github.com/user-attachments/assets/fe8f2301-d782-4fe8-8ca7-cb37bbacde8c" />
+<img width="911" height="637" alt="image" src="https://github.com/user-attachments/assets/f699cb1d-f3ac-41f1-8aaf-f682f1adac43" 
+/>
+<img width="862" height="622" alt="image" src="https://github.com/user-attachments/assets/924233c2-612a-4e8f-acf0-1b1a9aea193b" />
+<img width="737" height="902" alt="image" src="https://github.com/user-attachments/assets/67f81977-e7d9-4d8f-bbe3-1d56c29e7fc2" />
+
+
+
+
+
 
 
 
