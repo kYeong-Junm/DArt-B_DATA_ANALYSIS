@@ -105,11 +105,11 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 ### 핵심 함수 / 메서드 (`xml.etree.ElementTree`)
 
-`fromstring(문자열)`: XML 문자열 → `Element` 객체(부모/루트 반환) 
-
-`element.findtext('태그명')`: 해당 태그의 텍스트 1개 반환. 순서와 무관하게 안전하게 탐색 
-
-`element.findall('태그명')`: 동일 이름의 자식 엘리먼트를 모두 리스트로 반환 (for문과 함께 사용) 
+| 코드 | 기능 |
+|---|---|
+| `fromstring(문자열)` | XML 문자열 → `Element` 객체(부모/루트 반환) |
+| `element.findtext('태그명')` | 해당 태그의 텍스트 1개 반환. 순서와 무관하게 안전하게 탐색 |
+| `element.findall('태그명')` | 동일 이름의 자식 엘리먼트를 모두 리스트로 반환 (for문과 함께 사용) |
 
 > 판다스 1.3.0 이상: `pandas.read_xml(xml_str)`로 바로 데이터프레임 변환 가능
 
