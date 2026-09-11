@@ -75,7 +75,6 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 ### 변환 함수
 
-|---|---|
 | `json.dumps(obj, ensure_ascii=False)` | 파이썬 객체 → JSON 문자열. *한글 보존: `ensure_ascii=False` |
 | `json.loads(str)` | JSON 문자열 → 파이썬 객체 |
 
