@@ -89,7 +89,7 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 ---
 
-**XML**(eXtensible Markup Language): 시작 태그·종료 태그로 계층 구조를 표현. JSON보다 장황하지만 구조적.
+**XML**(eXtensible Markup Language): 시작 태그, 종료 태그로 계층 구조 표현. 구조적이지 못하여 API에서는 적절하지 않음.
 
 ```xml
 <book>                                <!-- 부모(루트) 엘리먼트 -->
