@@ -75,8 +75,8 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 ### 변환 함수
 
-| `json.dumps(obj, ensure_ascii=False)` | 파이썬 객체 → JSON 문자열. *한글 보존: `ensure_ascii=False` |
-| `json.loads(str)` | JSON 문자열 → 파이썬 객체 |
+`json.dumps(obj, ensure_ascii=False)`: 파이썬 객체 → JSON 문자열. *한글 보존: `ensure_ascii=False`
+`json.loads(str)`: JSON 문자열 → 파이썬 객체 
 
 *HTTP는 텍스트 기반 프로토콜이라 객체를 그대로 못 보내고 문자열로 변환해서 전송해야 함.
 
