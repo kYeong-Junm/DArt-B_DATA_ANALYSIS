@@ -116,7 +116,8 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 ---
 
 ## requests 패키지
-파이썬에서 웹 기반 API(URL)를 호출할 때 널리 쓰이는 패키지.
+: 파이썬에서 웹 기반 API(URL)를 호출할 때 널리 쓰이는 패키지.
+*브라우저 주소창에 URL 치고 엔터 누를 필요 없이, 파이썬 코드 한 줄로 대신함.
 
 `requests.get(url)`: GET 방식으로 URL 호출, `Response` 객체 반환 
 
@@ -135,12 +136,19 @@ API 응답은 보통 여러 겹으로 중첩된 딕셔너리 구조이므로, �
 ## 핵심 요약
 
 `json.dumps()`: 파이썬 객체 → JSON 문자열 
+
 `json.loads()`: JSON 문자열 → 파이썬 객체 
+
 `pandas.read_json()`: JSON 문자열 → 데이터프레임/시리즈 
+
 `xml.etree.ElementTree.fromstring()`: XML 문자열 → `Element` 객체 
+
 `Element.findtext()`: 지정 태그의 첫 자식 텍스트 반환 
+
 `Element.findall()`: 지정 태그와 일치하는 모든 자식 엘리먼트 반환 
+
 `requests.get()`: GET 방식으로 URL 호출, `Response` 객체 반환 
+
 `Response.json()`: 응답 JSON 문자열 → 파이썬 객체 
 
 ## 02.웹 스크래핑 사용하기
