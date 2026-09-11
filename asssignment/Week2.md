@@ -105,36 +105,35 @@ https://www.youtube.com/watch?v=Il6L8OtNFpc&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 
 ### 핵심 함수 / 메서드 (`xml.etree.ElementTree`)
 
-| 코드 | 기능 |
-|---|---|
-| `fromstring(문자열)` | XML 문자열 → `Element` 객체(부모/루트 반환) |
-| `element.findtext('태그명')` | 해당 태그의 텍스트 1개 반환. 순서와 무관하게 안전하게 탐색 |
-| `element.findall('태그명')` | 동일 이름의 자식 엘리먼트를 **모두** 리스트로 반환 (for문과 함께 사용) |
+`fromstring(문자열)`: XML 문자열 → `Element` 객체(부모/루트 반환) 
+
+`element.findtext('태그명')`: 해당 태그의 텍스트 1개 반환. 순서와 무관하게 안전하게 탐색 
+
+`element.findall('태그명')`: 동일 이름의 자식 엘리먼트를 모두 리스트로 반환 (for문과 함께 사용) 
 
 > 판다스 1.3.0 이상: `pandas.read_xml(xml_str)`로 바로 데이터프레임 변환 가능
 
 ---
 
 ## requests 패키지
-
 파이썬에서 웹 기반 API(URL)를 호출할 때 널리 쓰이는 패키지.
 
-| 코드 | 기능 |
-|---|---|
-| `requests.get(url)` | GET 방식으로 URL 호출, `Response` 객체 반환 |
-| `Response.json()` | 응답으로 받은 JSON 문자열을 파이썬 객체로 변환 |
-| `Response.text` | 응답 원본 텍스트 |
-| `Response.content` | 응답 데이터(bytes) — 이미지 등 바이너리에 유용 |
-| `Response.status_code` | HTTP 상태 코드 (200=정상, 404=파일 없음 등) |
+`requests.get(url)`: GET 방식으로 URL 호출, `Response` 객체 반환 
+
+`Response.json()`: 응답으로 받은 JSON 문자열을 파이썬 객체로 변환 
+
+`Response.text`: 응답 원본 텍스트 
+
+`Response.content`: 응답 데이터(bytes) — 이미지 등 바이너리에 유용 
+
+`Response.status_code`: HTTP 상태 코드 (200=정상, 404=파일 없음 등) 
 
 API 응답은 보통 여러 겹으로 중첩된 딕셔너리 구조이므로, 필요한 리스트를 꺼낸 뒤 `pandas.DataFrame()`으로 변환하는 과정이 뒤따름.
 
 ---
 
-## 핵심 함수·메서드 요약
+## 핵심 요약
 
-| 함수/메서드 | 기능 |
-|---|---|
 | `json.dumps()` | 파이썬 객체 → JSON 문자열 |
 | `json.loads()` | JSON 문자열 → 파이썬 객체 |
 | `pandas.read_json()` | JSON 문자열 → 데이터프레임/시리즈 |
