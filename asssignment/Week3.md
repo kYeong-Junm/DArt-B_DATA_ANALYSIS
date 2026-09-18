@@ -328,7 +328,6 @@ ns_book4.equals(new_ns_book4)   # True
 
 ---
 
-<br>
 
 ## 02. 잘못된 데이터 수정하기
 
