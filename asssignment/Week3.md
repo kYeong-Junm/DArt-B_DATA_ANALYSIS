@@ -324,6 +324,7 @@ ns_book4.equals(new_ns_book4)   # True
 | `DataFrame.update()` | 다른 데이터프레임을 사용해 원본 데이터프레임의 값을 업데이트 (다른 데이터프레임의 NaN은 업데이트에서 제외) |
 | `DataFrame.equals()` | 다른 데이터프레임과 동일한 원소를 가졌는지 비교 (동일하면 True) |
 
+---
 
 ## 02. 잘못된 데이터 수정하기
 
