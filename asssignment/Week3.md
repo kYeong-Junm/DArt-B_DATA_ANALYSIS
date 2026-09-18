@@ -695,6 +695,8 @@ ns_book6 = ns_book6[ns_book6['발행년도'] != -1]
 <img width="1427" height="872" alt="image" src="https://github.com/user-attachments/assets/e3528bde-d10e-45a3-9ed8-216b6dbd2e98" />
 <img width="1352" height="861" alt="image" src="https://github.com/user-attachments/assets/50ade548-1a23-4c5f-b4e9-607ac9b5db4f" />
 <img width="1392" height="870" alt="image" src="https://github.com/user-attachments/assets/896433f0-61e2-4ab2-a594-052c2c4ca5c6" />
+<img width="942" height="772" alt="image" src="https://github.com/user-attachments/assets/765a0d6d-bed3-4725-8dce-fe59db09a082" />
+
 
 
 <br>
