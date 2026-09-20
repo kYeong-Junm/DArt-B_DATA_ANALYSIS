@@ -769,14 +769,12 @@ ns_book6 = ns_book6[ns_book6['발행년도'] != -1]
 
 ```
 답: 3️⃣ pd.merge(df1, df2, left_on='col1', right_on='col3', how='outer')
-
 이유: 두 데이터프레임은 컬럼 이름이 달라서(`col1` vs `col3`) `left_on`, `right_on`으로 키를 직접 지정해야 하고, 결과에 양쪽 데이터가 모두 남아 있으므로 `outer` 조인이 필요하다.
 
-| 보기 | 코드 | 오답 이유 |
-|------|------|-----------|
-| 1번 | `pd.merge(df1, df2)` | 공통 컬럼이 없어서 `MergeError` 발생 |
-| 2번 | `pd.merge(df1, df2, how='left')` | 공통 컬럼이 없어 에러가 나고, 키를 지정해도 df1 기준이라 `w` 행이 빠짐 |
-| 4번 | `pd.merge(df1, df2, left_on='col1', right_on='col3', how='inner')` | 양쪽에 모두 있는 `x`, `y`만 남고 `z`, `w` 행이 사라짐 |
+<나머지가 오답인 이유>
+1️⃣ pd.merge(df1, df2): 공통 컬럼이 없어서 `MergeError` 발생
+2️⃣ pd.merge(df1, df2, how='left'): 공통 컬럼이 없어 에러가 나고, 키를 지정해도 df1 기준이라 `w` 행이 빠짐
+4️⃣ pd.merge(df1, df2, left_on='col1', right_on='col3', how='inner'): 양쪽에 모두 있는 `x`, `y`만 남고 `z`, `w` 행이 사라짐
 
 ```
 
