@@ -652,8 +652,7 @@ plt.show()
 작업은 코랩에서 진행한 뒤, 코랩 링크를 아래에 첨부해주세요.**
 
 ```
-여기에 코랩 링크를 첨부해주세요!
-(제출 전, 코랩의 공유 설정을 ‘링크가 있는 모든 사용자가 보기 가능’으로 변경했는지 반드시 확인해주세요.)
+(https://colab.research.google.com/drive/120rgPGdV_hRXvRWhhqIMO8OaUwAjgxVe?usp=sharing)
 ```
 
 
