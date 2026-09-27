@@ -652,7 +652,7 @@ plt.show()
 작업은 코랩에서 진행한 뒤, 코랩 링크를 아래에 첨부해주세요.**
 
 ```
-(https://colab.research.google.com/drive/120rgPGdV_hRXvRWhhqIMO8OaUwAjgxVe?usp=sharing)
+https://colab.research.google.com/drive/120rgPGdV_hRXvRWhhqIMO8OaUwAjgxVe?usp=sharing
 ```
 
 
