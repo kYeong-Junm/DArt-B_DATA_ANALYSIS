@@ -397,14 +397,256 @@ values[max_idx]
 
 ## 02. 분포 요약하기
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+## 핵심 키워드
+`맷플롯립` `산점도` `히스토그램` `도수` `로그 스케일` `상자 수염 그림`
+
+---
+
+## 왜 그래프로 요약하는가?
+
+- 평균이나 중앙값은 이해하기 쉽지만, 분위수·분산·표준편차 등은 숫자만으로 직관적으로 와닿지 않음
+- 전체 데이터를 한눈에 파악하려면 그래프가 가장 좋은 방법
+- 이번 절에서 다루는 세 가지 그래프: **산점도(scatter plot)**, **히스토그램(histogram)**, **상자 수염 그림(box-and-whisker plot)**
+
+---
+
+## 산점도 그리기
+
+**산점도**는 데이터를 화면에 뿌리듯 그리는 그래프. 두 **변수(variable)** 혹은 **특성(feature)** 값을 직교 좌표계에 점으로 나타냄.
+
+> 변수/특성: 프로그래밍의 변수와는 다른 개념. 데이터 분석에서는 한 레코드를 구성하는 개별 측정값을 의미함. 통계학에서는 '변수', 이 책에서는 주로 '특성'이라는 용어를 사용.
+
+- 수평축 = x축, 수직축 = y축
+- 그래프는 **맷플롯립(matplotlib)** 패키지로 그림 (`matplotlib.pyplot`을 보통 `plt`로 줄여서 사용)
+
+```python
+import matplotlib.pyplot as plt
+```
+
+### scatter() 함수
+
+```python
+plt.scatter([1,2,3,4], [1,2,3,4])
+plt.show()
+```
+
+- 첫 번째 매개변수: x축 좌표
+- 두 번째 매개변수: y축 좌표
+
+데이터프레임 열을 그대로 넣어도 됨:
+
+```python
+plt.scatter(ns_book7['번호'], ns_book7['대출건수'])
+plt.show()
+```
+
+> '번호' 열은 일련번호일 뿐 의미가 없는 값이라, 대출건수가 번호에 따라 특별한 경향 없이 고르게 퍼져 있음.
+
+### 투명도 조절하기 (alpha)
+
+데이터가 겹쳐서 잘 안 보일 때, `alpha` 매개변수(0~1)로 투명도를 지정하면 중첩된 부분이 짙게 표시되어 밀집도를 가늠하기 좋음.
+
+```python
+plt.scatter(ns_book7['도서권수'], ns_book7['대출건수'], alpha=0.1)
+plt.show()
+```
+
+- 0에 가까울수록 투명, 1에 가까울수록 불투명
+
+### 상관관계 파악하기
+
+- x가 증가할 때 y도 증가 → **양의 상관관계**
+- x가 증가할 때 y는 감소 → **음의 상관관계**
+
+```python
+average_borrows = ns_book7['대출건수']/ns_book7['도서권수']
+plt.scatter(average_borrows, ns_book7['대출건수'], alpha=0.1)
+plt.show()
+```
+
+→ '도서권수 당 대출건수'가 늘어날수록 '대출건수'도 늘어나는 양의 상관관계가 뚜렷하게 보임.
+
+> 산점도는 2차원(또는 3차원)까지만 가능해서, 표현할 수 있는 특성 개수에 한계가 있음.
+
+---
+
+## 히스토그램 그리기
+
+**히스토그램**은 수치형 특성의 값을 일정한 **구간(bin, 계급)**으로 나누어, 구간 안에 포함된 데이터 개수(**도수, frequency**)를 막대로 그린 그래프.
+
+### hist() 함수
+
+```python
+plt.hist([0,3,5,6,7,7,9,13], bins=5)
+plt.show()
+```
+
+- `bins`: 구간 개수 지정 (기본값 10)
+- 어느 구간에 데이터가 몰려 있는지 한눈에 보이지만, 구간 경계 수치는 그래프만으로 확인하기 어려움
+
+### 구간 경곗값 확인하기
+
+```python
+import numpy as np
+np.histogram_bin_edges([0,3,5,6,7,7,9,13], bins=5)
+# array([ 0. , 2.6, 5.2, 7.8, 10.4, 13. ])
+```
+
+- 경곗값은 다음 구간에 포함됨 (예: 2.6은 두 번째 구간 소속)
+- 마지막 구간은 최댓값을 포함
+
+### 정규분포와 표준정규분포
+
+- **정규분포(normal distribution)**: 종 모양처럼 가운데가 볼록하고 평균을 중심으로 대칭인 분포
+- **표준정규분포(standard normal distribution)**: 평균 0, 표준편차 1인 정규분포
+
+```python
+np.random.seed(42)
+random_samples = np.random.randn(1000)
+
+print(np.mean(random_samples), np.std(random_samples))
+# 0.0193... 0.9787...
+
+plt.hist(random_samples)
+plt.show()
+```
+
+- `randn()`: 표준정규분포를 따르는 난수 생성
+- `seed()`: 유사난수(pseudorandom number, 가짜 난수) 생성 → 항상 같은 결과 재현 가능
+
+### 로그 스케일로 구간 조정하기
+
+한 구간의 도수가 너무 커서 다른 구간이 안 보이는 문제를 해결하기 위해, y축에 **로그 스케일(log scale)**을 적용할 수 있음. 큰 값일수록 도수 차이가 압축되어 작은 값과의 차이가 상대적으로 줄어듦.
+
+```python
+plt.hist(ns_book7['대출건수'])
+plt.yscale('log')
+plt.show()
+```
+
+- 맷플롯립 기본 로그 함수는 밑이 10 (10⁰, 10¹, 10²...)
+- 로그 스케일 그래프를 볼 때, 실제 데이터 격차는 그래프보다 훨씬 크다는 점에 유의
+- `hist()` 함수의 `log=True` 매개변수로도 동일한 효과 가능
+
+```python
+plt.hist(ns_book7['대출건수'], bins=100)
+plt.yscale('log')
+plt.show()
+```
+
+- `bins` 값을 키우면 데이터 분포를 더 세밀하게 관찰 가능
+
+### x축 로그 스케일 적용
+
+```python
+title_len = ns_book7['도서명'].apply(len)
+plt.hist(title_len, bins=100)
+plt.xscale('log')
+plt.show()
+```
+
+- `xscale('log')`: x축에도 로그 스케일 적용 가능 (한쪽으로 편중된 분포를 고르게 펼쳐볼 때 사용)
+
+> 히스토그램은 하나의 특성 분포를 보기엔 좋지만, 여러 특성을 비교하려면 축 범위가 달라 비교가 번거로움 → 이럴 때 상자 수염 그림이 유용.
+
+---
+
+## 상자 수염 그림 그리기
+
+**상자 수염 그림(box-and-whisker plot)**은 최솟값, 세 개의 사분위수, 최댓값 등 다섯 개의 숫자로 데이터를 요약하는 그래프.
+
+### 그리는 순서
+
+1. 사분위수 계산 → 25%, 75% 지점을 밑면·윗면으로 하는 직사각형(상자) 그리기
+2. 중간값(50%) 위치에 수평선 긋기
+3. 상자 밑면·윗면에서 상자 높이의 1.5배 거리 안에서 가장 멀리 있는 샘플까지 수직선(수염) 긋기
+4. 수직선 밖의 데이터는 점으로 표시 → 이를 **이상치(outlier)**라고 부름
+
+- **IQR(interquartile range)**: 제1사분위수(25%)와 제3사분위수(75%) 사이 거리
+
+> 상자 수염 그림에서의 이상치는 단순히 IQR의 1.5배 거리 밖 데이터를 의미할 뿐, 데이터 분석에서 반드시 제거해야 하는 대상은 아님. (머신러닝에서 말하는 이상치와는 다른 개념)
+
+### boxplot() 함수
+
+```python
+plt.boxplot(ns_book7[['대출건수','도서권수']])
+plt.show()
+```
+
+- 여러 열을 리스트로 전달하면 여러 상자를 동시에 그림
+- 사분위수가 작으면 상자가 잘 안 보일 수 있음 → 이럴 때도 로그 스케일 적용
+
+```python
+plt.boxplot(ns_book7[['대출건수','도서권수']])
+plt.yscale('log')
+plt.show()
+```
+
+### 수평으로 그리기 (vert)
+
+```python
+plt.boxplot(ns_book7[['대출건수','도서권수']], vert=False)
+plt.xscale('log')
+plt.show()
+```
+
+- `vert=False`: 상자 수염 그림을 수평으로 그림 → 이때는 로그 스케일도 x축에 지정
+
+### 수염 길이 조정하기 (whis)
+
+```python
+plt.boxplot(ns_book7[['대출건수','도서권수']], whis=10)
+plt.yscale('log')
+plt.show()
+```
+
+- 기본 수염 길이는 IQR의 1.5배
+- `whis` 값을 키우면 더 먼 데이터까지 수염으로 포함
+
+**백분위수로 지정하기**
+
+```python
+plt.boxplot(ns_book7[['대출건수','도서권수']], whis=(0,100))
+plt.yscale('log')
+plt.show()
+```
+
+- `whis=(10, 90)` → 10%, 90% 백분위수까지 수염
+- `whis=(0, 100)` → 최솟값~최댓값까지 수염 (이상치 없이 전부 표시)
+
+---
+
+## 마무리 - 6가지 키워드 핵심 정리
+
+| 키워드 | 설명 |
+|---|---|
+| **맷플롯립** | 파이썬의 대표적인 그래프 패키지. 산점도·히스토그램·상자 수염 그림 외에 막대·선 그래프 등 다양한 그래프 지원 |
+| **산점도** | 데이터를 2차원(또는 3차원) 공간에 점으로 표시. 일반적으로 2~3개 특성 표현 가능 (색깔로 한 특성 추가 표현 가능) |
+| **히스토그램** | 데이터를 일정 구간으로 나눠 구간별 도수를 막대로 표현. 데이터 집중 위치 파악에 유용 |
+| **로그 스케일** | 그래프가 한쪽으로 편중될 때 x, y축에 적용. 넓은 범위 데이터를 간결하게 표시 |
+| **상자 수염 그림** | 사분위수·최솟값·최댓값으로 여러 특성의 분포를 비교. IQR의 1.5배 범위 안에서 가장 먼 데이터까지 수염으로 표시 |
+
+## 핵심 함수와 메서드
+
+| 함수/메서드 | 기능 |
+|---|---|
+| `matplotlib.pyplot.scatter()` | 2차원 평면에 산점도를 그림 |
+| `matplotlib.pyplot.hist()` | 히스토그램을 그림 |
+| `matplotlib.pyplot.boxplot()` | 상자 수염 그림을 그림 |
+| `matplotlib.pyplot.xscale()` | x축의 스케일 지정 |
+| `matplotlib.pyplot.yscale()` | y축의 스케일 지정 |
+| `numpy.random.seed()` | 임의의 정수를 입력하면 난수 발생을 동일하게 재현 |
+| `numpy.random.randn()` | 표준정규분포를 따르는 난수 생성 |
+
 
 
 # 2️⃣ 수행 인증
 
 <img width="887" height="877" alt="image" src="https://github.com/user-attachments/assets/a269ee20-3754-4a78-9db0-a2014c68a5a4" />
 <img width="900" height="885" alt="image" src="https://github.com/user-attachments/assets/3096dd3c-5b2f-405e-af54-518615d4ab85" />
-<img width="907" height="861" alt="image" src="https://github.com/user-attachments/assets/2e97dc3e-b677-4fbf-9320-cbe6ceb5df55" />
+<img width="876" height="856" alt="image" src="https://github.com/user-attachments/assets/a658b7c3-d08f-4b84-8f9d-462ba8665a6d" />
+<img width="885" height="882" alt="image" src="https://github.com/user-attachments/assets/420ae6e7-302c-47e9-92f2-86a8565c578c" />
+
 
 
 
