@@ -44,20 +44,13 @@ https://www.youtube.com/watch?v=deYY4xHsI0o&list=PLVsNizTWUw7FGzSRCkQrPEEe-ljVXg
 ---
 
 ## Figure(피겨) 객체
-
-맷플롯립에는 **Figure(피겨)**라는, 모든 그래프 구성 요소를 담고 있는 **최상위 객체**가 있음.
+모든 그래프 구성 요소를 담고 있는 **최상위 객체**
 
 - `scatter()` 등을 호출하면 자동으로 피겨 객체가 생성됨
 - `figure()` 함수로 **명시적으로** 피겨 객체를 만들면 다양한 옵션(크기 등)을 조절할 수 있음
 - `plt.show()`가 호출되면 `figure()`로 만든 피겨 객체는 **자동으로 소멸**됨
 
 ### 그래프 크기 바꾸기 — figsize
-
-```python
-plt.figure(figsize=(9, 6))   # 너비 9인치, 높이 6인치
-plt.scatter(ns_book7['도서권수'], ns_book7['대출건수'], alpha=0.1)
-plt.show()
-```
 
 - `figsize`는 **튜플**로 지정 (리스트와 비슷하지만 소괄호, 한 번 생성하면 수정 불가)
 - 단위는 **인치(inch)**, 기본 그래프 크기는 (6, 4)
@@ -144,26 +137,9 @@ fig.show()
 
 `subplots()`의 **첫 번째 매개변수 = 행 개수**, **두 번째 매개변수 = 열 개수**.
 
-```python
-# subplots(2, 3) → 2행 3열 (6개 서브플롯)
-# subplots(1, 2) → 1행 2열 (가로로 나란히 2개)
-
-fig, axs = plt.subplots(1, 2, figsize=(10, 4))
-axs[0].scatter(ns_book7['도서권수'], ns_book7['대출건수'], alpha=0.1)
-axs[0].set_title('scatter plot')
-axs[0].set_xlabel('number of books')
-axs[0].set_ylabel('borrow count')
-
-axs[1].hist(ns_book7['대출건수'], bins=100)
-axs[1].set_title('histogram')
-axs[1].set_yscale('log')
-axs[1].set_xlabel('borrow count')
-axs[1].set_ylabel('frequency')
-fig.show()
-```
 ---
 
-## 마무리 - 5가지 키워드 핵심 정리
+## 마무리 - 5가지 키워드 정리
 
 | 키워드 | 설명 |
 |---|---|
