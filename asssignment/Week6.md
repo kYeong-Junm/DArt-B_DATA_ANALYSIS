@@ -180,9 +180,6 @@ fig.show()
 
 **컬러 막대(color bar)**는 컬러맵의 색깔이 어떤 값에 대응하는지 참조 정보를 제공하는 막대. `scatter()`가 반환하는 객체(sc)를 `colorbar()` 메서드에 전달하면 됨.
 
-> 📝 pyplot(`plt.colorbar()`)을 사용하는 경우 매개변수 없이 호출해도 현재 피겨의 서브플롯에 자동으로 컬러 막대가 추가됨.
-> 더 많은 컬러맵: https://matplotlib.org/stable/gallery/color/colormap_reference.html
-
 ---
 
 ## 02. 맷플롯립의 고급 기능 배우기
@@ -209,17 +206,6 @@ fig.show()
 
 > 📝 `plot()`을 별도 색 지정 없이 여러 번 호출하면, 맷플롯립이 자동으로 선 그래프마다 다른 색을 순환 지정함. 기본은 10가지 색을 돌아가며 사용하고, 10개 이상 선을 그리면 처음 색부터 반복됨.
 
-### 범례 추가하기
-
-```python
-fig, ax = plt.subplots(figsize=(8, 6))
-ax.plot(line1['발행년도'], line1['대출건수'], label='황금가지')
-ax.plot(line2['발행년도'], line2['대출건수'], label='비룡소')
-ax.set_title('연도별 대출건수')
-ax.legend()   # 범례 추가
-fig.show()
-```
-→ `plot()` 호출 시 **label** 매개변수로 레이블을 추가하고, 마지막에 **`legend()`**를 호출하면 범례가 추가됨.
 
 ### for 문 + 슬라이스로 여러 선 그래프
 
@@ -460,8 +446,7 @@ fig.show()
 4주차에서 사용했던 캐글 데이터셋을 활용하여, 다양한 요소를 포함한 복잡한 그래프를 직접 작성해주세요.**
 
 ```
-[여기에 코랩 링크를 첨부해주세요!
-(제출 전, 코랩의 공유 설정을 ‘링크가 있는 모든 사용자가 보기 가능’으로 변경했는지 반드시 확인해주세요.)](https://colab.research.google.com/drive/18yCjsgh8di4dwe6_RXWmbp8r6ua7qOpB?usp=sharing)
+[https://colab.research.google.com/drive/18yCjsgh8di4dwe6_RXWmbp8r6ua7qOpB?usp=sharing)]
 ```
 
 
