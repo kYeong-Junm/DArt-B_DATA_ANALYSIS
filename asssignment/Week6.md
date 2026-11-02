@@ -446,7 +446,7 @@ fig.show()
 4주차에서 사용했던 캐글 데이터셋을 활용하여, 다양한 요소를 포함한 복잡한 그래프를 직접 작성해주세요.**
 
 ```
-[https://colab.research.google.com/drive/18yCjsgh8di4dwe6_RXWmbp8r6ua7qOpB?usp=sharing]
+https://colab.research.google.com/drive/18yCjsgh8di4dwe6_RXWmbp8r6ua7qOpB?usp=sharing
 ```
 
 
